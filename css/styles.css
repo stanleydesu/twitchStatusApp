@@ -1,3 +1,18 @@
 :root {
+	--bg: #6441a5;
+}
 
+body {
+	background-color: var(--bg);
+}
+
+.wrapper {
+	position: absolute;
+	top: 5em;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#twitchLogo {
+	width: 90vw;
 }
