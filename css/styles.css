@@ -19,6 +19,7 @@ body {
 
 #streamers {
 	width: 70vw;
+	margin: auto;
 }
 
 #streamers.streamer img {
@@ -33,4 +34,8 @@ body {
 #streamers.streamer.bio {
 	font-family: "Helvetica Neue";
 	font-weight: 200;
+}
+
+#streamers.streamer {
+	margin: auto;
 }
