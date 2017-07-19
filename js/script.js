@@ -2,52 +2,60 @@
 
 let defaultUsers = [
   {
-    "name": "ESL_SC2",
-    "data": undefined
+    "name": "ESL_SC2"
   },
   {
-    "name": "OgamingSC2",
-    "data": undefined
+    "name": "OgamingSC2"
   },
   {
-    "name": "cretetion",
-    "data": undefined
+    "name": "cretetion"
   },
   {
-    "name": "freecodecamp",
-    "data": undefined
+    "name": "freecodecamp"
   },
   {
-    "name": "storbeck",
-    "data": undefined
+    "name": "storbeck"
   },
   {
-    "name": "habathcx",
-    "data": undefined
+    "name": "habathcx"
   },
   {
-    "name": "RobotCaleb",
-    "data": undefined
+    "name": "RobotCaleb"
   },
   {
-    "name": "noobs2ninjas",
-    "data": undefined
+    "name": "noobs2ninjas"
   }
 ];
 
-function loadUserData(users) {
-	defaultUsers.forEach((user, i) => {
-		let url = 'https://wind-bow.gomix.me/twitch-api/users/' + user.name;
+function getData(users, type) {
+	users.forEach((user, i) => {
+		let url = `https://wind-bow.gomix.me/twitch-api/${type}/${user.name}`;
+		console.log(url);
 		$.ajax({
 			type: 'GET',
 			url: url,
 			dataType: 'jsonp',
 			success: function(data) {
-				defaultUsers[i].data = data;
+				users[i][type] = data;
 			}
 		});
-	});
+	})
 }
 
-loadUserData(defaultUsers);
+function getUserData(users) {
+	getData(users, 'users');
+}
+
+function getStreamData(users) {
+	getData(users, 'streams');
+}
+
+function getChannelData(users) {
+	getData(users, 'channels');
+}
+
+function displayUserData(users) {
+
+}
+
 
