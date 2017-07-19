@@ -38,7 +38,7 @@ function getData(users, type) {
 				users[i][type] = data;
 			}
 		});
-	})
+	});
 }
 
 function getUserData(users) {
@@ -54,9 +54,27 @@ function getChannelData(users) {
 }
 
 function displayUserData(users) {
-
+	let div = document.getElementById('streamers');
+	div.innerHTML = "";
+	users.forEach(user => {
+		div.innerHTML += toHTML(user);
+	});
 }
 
 function toHTML(user) {
-	let htmlString = '<div class="streamer"><img src="" alt=""><a href=""></a><p class="bio"></p></div>;';
+	console.log(user);
+	let htmlString = `<div class="streamer"><img src="${user.users.logo}" alt="${user.users.name}"><a href="${user.users._links.self}"></a><p class="bio">${user.users.bio}</p></div>`;
+	console.log(htmlString);
+	return htmlString;
 }
+
+getUserData(defaultUsers);
+
+console.log(defaultUsers);
+
+setTimeout(function() {
+	displayUserData(defaultUsers);
+}, 1000);
+
+
+
