@@ -30,7 +30,6 @@ let defaultUsers = [
 function getData(users, type) {
 	users.forEach((user, i) => {
 		let url = `https://wind-bow.gomix.me/twitch-api/${type}/${user.name}`;
-		console.log(url);
 		$.ajax({
 			type: 'GET',
 			url: url,
@@ -58,4 +57,6 @@ function displayUserData(users) {
 
 }
 
-
+function toHTML(user) {
+	let htmlString = '<div class="streamer"><img src="" alt=""><a href=""></a><p class="bio"></p></div>;';
+}
