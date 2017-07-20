@@ -20,22 +20,30 @@ body {
 #streamers {
 	width: 70vw;
 	margin: auto;
+	margin-top: 10%;
 }
 
-#streamers.streamer img {
+.streamer {
+	margin: auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+
+}
+
+.streamer img {
 	border-radius: 50%;
 	border: 3px solid white;
+	width: 30%;
+	height: 30%;
 }
 
-#streamers.streamer a {
+.streamer a {
 
 }
 
-#streamers.streamer.bio {
+.bio {
+	display: inline-block;
 	font-family: "Helvetica Neue";
 	font-weight: 200;
-}
-
-#streamers.streamer {
-	margin: auto;
 }
