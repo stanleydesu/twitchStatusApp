@@ -62,19 +62,16 @@ function displayUserData(users) {
 }
 
 function toHTML(user) {
-	console.log(user);
-	let htmlString = `<div class="streamer"><img src="${user.users.logo}" alt="${user.users.name}"><a href="${user.users._links.self}"></a><p class="bio">${user.users.bio}</p></div>`;
+	let htmlString = `<div class="streamer"><img src="${user.users.logo}" alt="${user.name}"><a href="${user.users._links.self}">${user.name}</a><p class="bio">${user.users.bio}</p></div>`;
 	console.log(htmlString);
 	return htmlString;
 }
 
 getUserData(defaultUsers);
 
-console.log(defaultUsers);
-
 setTimeout(function() {
 	displayUserData(defaultUsers);
 }, 1000);
 
-
+console.log(defaultUsers);
 
