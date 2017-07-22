@@ -25,26 +25,22 @@ body {
 	background-color: white;
 	color: var(--twitch);
 	font-family: "Helvetica Neue";
-	padding-top: 1em;
-	padding-bottom: 1em;
+	padding: 1em;
 	width: 50vw;
 	border-radius: 10px;
 	position: relative;
 }
 
-#logo-holder {
-	margin-bottom: 1em;
-}
-
 #logo {
-	width: 90%;
+	width: 100%;
 	margin: auto;
 	display: block;
 }
 
 #filters {
+	margin-top: 1em;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 }
 
 #filters > div {
@@ -52,22 +48,32 @@ body {
 	font-size: 16px;
 	text-align: center;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	width: 33%;
+	width: 20%;
 	height: 3em;
-	border: 5px solid transparent;
+	border: 0;
+	border-bottom: 6px solid white;
+	transition: width 0.3s ease;
+	position: relative;
+}
+
+#filters > div:hover {
+	width: 30%;
 }
 
 #filters #all {
+	color: var(--all);
 	border-bottom-color: var(--all);
 }
 
 #filters #online {
+	color: var(--online);
 	border-bottom-color: var(--online);
 }
 
 #filters #offline {
+	color: var(--offline);
 	border-bottom-color: var(--offline);
 }
 
