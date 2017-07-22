@@ -14,7 +14,7 @@ body {
 	background-color: var(--twitch);
 }
 
-.wrapper {
+.main-wrapper {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -31,6 +31,11 @@ body {
 	position: relative;
 }
 
+#status-box > div {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
 #logo {
 	width: 100%;
 	margin: auto;
@@ -38,7 +43,6 @@ body {
 }
 
 #filters {
-	margin-top: 1em;
 	display: flex;
 	justify-content: space-around;
 }
@@ -48,12 +52,12 @@ body {
 	font-size: 16px;
 	text-align: center;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	width: 20%;
 	height: 3em;
 	border: 0;
-	border-bottom: 6px solid white;
+	border-bottom: 3px solid white;
 	transition: width 0.3s ease;
 	position: relative;
 }
@@ -75,6 +79,41 @@ body {
 #filters #offline {
 	color: var(--offline);
 	border-bottom-color: var(--offline);
+}
+
+.min-wrapper {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#add-holder {
+	height: 3em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#add-holder > i {
+	font-size: 40px;
+}
+
+#add-holder > i:active {
+	font-size: 30px;
+}
+
+#add {
+	width: 0;
+	transition: width 0.3s ease, visibility 0.1s ease;
+	border: none;
+	padding: 0;
+	visibility: none;
+}
+
+#add.active {
+	visibility: visible;
+	width: 180px;
 }
 
 .streamer {
