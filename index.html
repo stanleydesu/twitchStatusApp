@@ -3,19 +3,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Twitch Status App</title>
 	<link rel="stylesheet" href="css/styles.css" type="text/css">
+	<link rel="stylesheet" href="https://rawgit.com/FortAwesome/Font-Awesome/master/css/font-awesome.min.css">
 </head>
 <body>
-	<div class="wrapper">
+	<div class="main-wrapper">
 		<div id="status-box">
 			<!-- logo -->
-			<div id='logo-holder'>
-				<img id='logo' src="https://fontmeme.com/permalink/170722/3bf64f7427db97efbfe9a47e442f07af.png" alt="twitchy-tv-font" border="0">
-			</div>
+			<img id='logo' src="https://fontmeme.com/permalink/170722/3bf64f7427db97efbfe9a47e442f07af.png" alt="twitchy-tv-font" border="0">
 			<div id="filters">
 				<div id="all" class="filter">All</div>
 				<div id="online" class="filter">Online</div>
 				<div id="offline" class="filter">Offline</div>
 			</div>
+			<div class="min-wrapper">
+				<div id="add-holder">
+					<i id="add-icon" class="fa fa-plus-circle" aria-hidden="true"></i>
+					<input id="add" type="text">
+				</div>
+			</div>
+
 		</div>
 	</div>
 	
