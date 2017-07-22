@@ -1,8 +1,58 @@
 :root {
-	--bg: #6441a5;
+	--twitch: #7224a8;
+	--online: #0c8;
+	--offline: #e74c3c;
 }
 
 body {
-	background-color: var(--bg);
+	background-color: var(--twitch);
 }
 
+.wrapper {
+	position: absolute;
+	top: 5em;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#status-box {
+	background-color: white;
+	color: var(--twitch);
+	font-family: "Helvetica Neue";
+	width: 50vw;
+	min-height: 10vh;
+	border-radius: 10px;
+	position: relative;
+}
+
+#logo-holder {
+	margin-top: 1em;
+}
+
+#logo {
+	width: 90%;
+	margin: auto;
+	display: block;
+}
+
+#status-box > div {
+	display: inline-block;
+}
+
+.streamer {
+
+}
+
+.streamer img {
+	width: 6em;
+	height: 6em;
+
+}
+
+.streamer a {
+
+}
+
+.streamer.status {
+
+}
