@@ -1,77 +1,94 @@
-"use strict";
+// "use strict";
 
-let defaultUsers = [
-  {
-    "name": "ESL_SC2"
-  },
-  {
-    "name": "OgamingSC2"
-  },
-  {
-    "name": "cretetion"
-  },
-  {
-    "name": "freecodecamp"
-  },
-  {
-    "name": "storbeck"
-  },
-  {
-    "name": "habathcx"
-  },
-  {
-    "name": "RobotCaleb"
-  },
-  {
-    "name": "noobs2ninjas"
-  }
-];
+let addIcon = document.getElementById('add-icon'),
+	add = document.getElementById('add');
 
-function getData(users, type) {
-	users.forEach((user, i) => {
-		let url = `https://wind-bow.gomix.me/twitch-api/${type}/${user.name}`;
-		$.ajax({
-			type: 'GET',
-			url: url,
-			dataType: 'jsonp',
-			success: function(data) {
-				users[i][type] = data;
-			}
-		});
-	});
-}
+addIcon.addEventListener('click', function() {
+	// fade in and widen search box
+	add.style.visibility = "visible";
+	add.className = "active";
+	add.focus();
+});
 
-function getUserData(users) {
-	getData(users, 'users');
-}
+add.addEventListener('blur', function() {
+	// remove active class
+	add.className = "";
+});
 
-function getStreamData(users) {
-	getData(users, 'streams');
-}
+// let defaultUsers = [
+//   {
+//     "name": "ESL_SC2"
+//   },
+//   {
+//     "name": "OgamingSC2"
+//   },
+//   {
+//     "name": "cretetion"
+//   },
+//   {
+//     "name": "freecodecamp"
+//   },
+//   {
+//     "name": "storbeck"
+//   },
+//   {
+//     "name": "habathcx"
+//   },
+//   {
+//     "name": "RobotCaleb"
+//   },
+//   {
+//     "name": "noobs2ninjas"
+//   }
+// ];
 
-function getChannelData(users) {
-	getData(users, 'channels');
-}
+// function getData(users, type) {
+// 	users.forEach((user, i) => {
+// 		let url = `https://wind-bow.gomix.me/twitch-api/${type}/${user.name}`;
+// 		$.ajax({
+// 			type: 'GET',
+// 			url: url,
+// 			dataType: 'jsonp',
+// 			success: function(data) {
+// 				users[i][type] = data;
+// 			}
+// 		});
+// 	});
+// }
 
-function displayUserData(users) {
-	let div = document.getElementById('streamers');
-	div.innerHTML = "";
-	users.forEach(user => {
-		div.innerHTML += toHTML(user);
-	});
-}
+// function getUserData(users) {
+// 	getData(users, 'users');
+// }
 
-function toHTML(user) {
-	let htmlString = `<div class="streamer"><img src="${user.users.logo}" alt="${user.name}"><a href="${user.users._links.self}">${user.name}</a><p class="bio">${user.users.bio}</p></div>`;
-	console.log(htmlString);
-	return htmlString;
-}
+// function getStreamData(users) {
+// 	getData(users, 'streams');
+// }
 
-getUserData(defaultUsers);
+// function getChannelData(users) {
+// 	getData(users, 'channels');
+// }
 
-setTimeout(function() {
-	displayUserData(defaultUsers);
-}, 1000);
+// function displayUserData(users) {
+// 	let div = document.getElementById('status-box');
+// 	div.innerHTML = "";
+// 	users.forEach(user => {
+// 		div.innerHTML += toHTML(user);
+// 	});
+// }
 
-console.log(defaultUsers);
+// function toHTML(user) {
+// 	let htmlString = `<div class="streamer"><img src="${user.users.logo}" alt="${user.name}"><a href="${user.users._links.self}">${user.name}</a><p class="bio">${user.users.bio}</p></div>`;
+// 	console.log(htmlString);
+// 	return htmlString;
+// }
+
+// getUserData(defaultUsers);
+
+// setTimeout(function() {
+// 	displayUserData(defaultUsers);
+// }, 1000);
+
+// console.log(defaultUsers);
+
+
 
