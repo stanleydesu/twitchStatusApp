@@ -67,8 +67,9 @@ function displayUserData(users) {
 }
 
 function toHTML(user) {
-	let status;
-	let htmlString = `<div class="streamer"><div class="image" style="background-image: url('${user.users.logo}');"></div><div class="name"><a href="${`https://twitch.tv/${user.name}`}">${user.users['display_name']}</a></div><div class="status"></div></div>`
+	let streamStatus = (user.streams.stream !== null ? user.streams.stream.channel.status : 'Offline');
+	let status = streamStatus === 'Offline' ? 'offline' : 'online';
+	let htmlString = `<div class="streamer"><div class="image ${status}" style="background-image: url('${user.users.logo}');"></div><div class="name"><a href="${user.channels.url}">${user.users['display_name']}</a></div><div class="status">${streamStatus}</div></div>`
 	console.log(htmlString);
 	return htmlString;
 }
@@ -79,6 +80,6 @@ getChannelData(defaultUsers);
 
 setTimeout(function() {
 	displayUserData(defaultUsers);
-}, 1000);
+}, 2000);
 
 console.log(defaultUsers);
