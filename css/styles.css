@@ -1,5 +1,6 @@
 :root {
 	--twitch: #7224a8;
+	--grey: #333;
 	/* rgb right here, right now */
 	--all: #3498db;
 	--online: #2ecc71;
@@ -122,10 +123,25 @@ body {
 	width: 100%;
 }
 
+.online {
+	color: var(--online) !important;
+	border-color: var(--online) !important;
+}
+
+.offline {
+	color: var(--offline) !important;
+	border-color: var(--offline) !important;
+}
+
 .streamer {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	border: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-bottom: 3px solid var(--twitch);
+	color: var(--grey);
 }
 
 .streamer > div {
@@ -136,21 +152,30 @@ body {
 }
 
 .streamer .image {
-	background-image: url("http://www.tiptoptailors.ca/media/A2W/products/24500/5114-976-2020-1_a_details.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-	border: 3px solid var(--twitch);
+	width: 4em;
+	height: 4em;
+	border-width: 3px;
+	border-style: solid;
+	border-color: var(--grey);
 }
 
 .streamer .name {
-	width: 10%;
+	width: 6em;
+	height: 2em;
+	position: relative;
+}
+
+.streamer .name a {
+	text-decoration: none;
+	font-weight: 500;
+	color: inherit;
 }
 
 .streamer .status {
-	width: 50%;
+	width: 22em;
+	color: inherit;
 }
 
 @media screen and (max-width: 600px) {
