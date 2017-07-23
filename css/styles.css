@@ -8,6 +8,7 @@
 
 body {
 	background-color: var(--twitch);
+	margin: 0;
 }
 
 .main-wrapper {
@@ -22,7 +23,7 @@ body {
 	color: var(--twitch);
 	font-family: "Helvetica Neue";
 	padding: 1em;
-	width: 50vw;
+	width: 60vw;
 	border-radius: 10px;
 	position: relative;
 }
@@ -40,7 +41,7 @@ body {
 
 #filters {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 #filters > div {
@@ -50,7 +51,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 20%;
+	width: 30%;
 	height: 3em;
 	border: 0;
 	border-bottom: 3px solid white;
@@ -59,7 +60,7 @@ body {
 }
 
 #filters > div:hover {
-	width: 30%;
+	width: 33%;
 }
 
 #filters #all {
@@ -117,20 +118,47 @@ body {
 	width: 180px;
 }
 
+#streamers {
+	width: 100%;
+}
+
 .streamer {
-
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
-.streamer img {
-	width: 6em;
-	height: 6em;
-
+.streamer > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
 }
 
-.streamer a {
-
+.streamer .image {
+	background-image: url("http://www.tiptoptailors.ca/media/A2W/products/24500/5114-976-2020-1_a_details.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	border: 3px solid var(--twitch);
 }
 
-.streamer.status {
+.streamer .name {
+	width: 10%;
+}
 
+.streamer .status {
+	width: 50%;
+}
+
+@media screen and (max-width: 600px) {
+	#status-box {
+		width: 90vw;
+	}
+	
+	.streamer {
+		font-size: 14px;
+	}
 }
