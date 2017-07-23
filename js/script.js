@@ -5,9 +5,9 @@ let addIcon = document.getElementById('add-icon'),
 
 addIcon.addEventListener('click', function() {
 	// fade in and widen search box
-	add.style.visibility = "visible";
 	add.className = "active";
-	add.focus();
+	// allow search box to render before focusing
+	setTimeout(function(){add.focus()},50);
 });
 
 add.addEventListener('blur', function() {
@@ -89,6 +89,3 @@ add.addEventListener('blur', function() {
 // }, 1000);
 
 // console.log(defaultUsers);
-
-
-
