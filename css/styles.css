@@ -6,10 +6,6 @@
 	--offline: #e74c3c;
 }
 
-/*
-var(--twitch);
-*/
-
 body {
 	background-color: var(--twitch);
 }
