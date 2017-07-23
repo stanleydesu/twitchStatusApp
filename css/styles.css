@@ -97,21 +97,26 @@ body {
 
 #add-holder > i {
 	font-size: 40px;
-	margin-left: 4px;
+	margin-left: 14px;
 	cursor: pointer;
 }
 
 #add {
 	width: 0;
-	transition: width 0.3s ease, visibility 0.3s ease;
+	height: 1em;
+	font-size: 16px;
+	color: var(--twitch);
+	transition: width 0.3s ease, opacity 0.4s ease, visibility 0.4s ease;
 	border: 3px solid var(--twitch);
 	border-radius: 5px;
 	outline: none;
-	padding: 0;
+	padding: 5px;
+	opacity: 0;
 	visibility: hidden;
 }
 
 #add.active {
+	opacity: 1;
 	visibility: visible;
 	width: 180px;
 }
