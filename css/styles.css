@@ -97,18 +97,18 @@ body {
 
 #add-holder > i {
 	font-size: 40px;
-}
-
-#add-holder > i:active {
-	font-size: 30px;
+	margin-left: 4px;
+	cursor: pointer;
 }
 
 #add {
 	width: 0;
-	transition: width 0.3s ease, visibility 0.1s ease;
-	border: none;
+	transition: width 0.3s ease, visibility 0.3s ease;
+	border: 3px solid var(--twitch);
+	border-radius: 5px;
+	outline: none;
 	padding: 0;
-	visibility: none;
+	visibility: hidden;
 }
 
 #add.active {
