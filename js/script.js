@@ -22,76 +22,63 @@ add.addEventListener('blur', function() {
 });
 
 let defaultUsers = [
-  {
-    "name": "freecodecamp"
-  },
-  {
-    "name": "esl_csgo"
-  },
-  {
-    "name": "playoverwatch"
-  },
-  {
-    "name": "scream"
-  },
-  {
-    "name": "summit1g"
-  },
-  {
-    "name": "pashabiceps"
-  },
-  {
-    "name": "m0e_tv"
-  },
-  {
-    "name": "c9sneaky"
-  }
+  {"name": "freecodecamp"},
+  {"name": "esl_csgo"},
+  {"name": "playoverwatch"},
+  {"name": "scream"},
+  {"name": "summit1g"},
+  {"name": "pashabiceps"},
+  {"name": "m0e_tv"},
+  {"name": "c9sneaky"}
 ];
 
-// function getData(users, type) {
-// 	users.forEach((user, i) => {
-// 		let url = `https://wind-bow.gomix.me/twitch-api/${type}/${user.name}`;
-// 		$.ajax({
-// 			type: 'GET',
-// 			url: url,
-// 			dataType: 'jsonp',
-// 			success: function(data) {
-// 				users[i][type] = data;
-// 			}
-// 		});
-// 	});
-// }
+function getData(users, type) {
+	users.forEach((user, i) => {
+		let url = `https://wind-bow.glitch.me/twitch-api/${type}/${user.name}`;
+		$.ajax({
+			type: 'GET',
+			url: url,
+			dataType: 'jsonp',
+			success: function(data) {
+				users[i][type] = data;
+			}
+		});
+	});
+}
 
-// function getUserData(users) {
-// 	getData(users, 'users');
-// }
+function getUserData(users) {
+	getData(users, 'users');
+}
 
-// function getStreamData(users) {
-// 	getData(users, 'streams');
-// }
+function getStreamData(users) {
+	getData(users, 'streams');
+}
 
-// function getChannelData(users) {
-// 	getData(users, 'channels');
-// }
+function getChannelData(users) {
+	getData(users, 'channels');
+}
 
-// function displayUserData(users) {
-// 	let div = document.getElementById('status-box');
-// 	div.innerHTML = "";
-// 	users.forEach(user => {
-// 		div.innerHTML += toHTML(user);
-// 	});
-// }
+function displayUserData(users) {
+	let streamers = document.getElementById('streamers');
+	streamers.innerHTML = "";
+	users.forEach(user => {
+		streamers.innerHTML += toHTML(user);
+	});
+}
 
-// function toHTML(user) {
-// 	let htmlString = `<div class="streamer"><img src="${user.users.logo}" alt="${user.name}"><a href="${user.users._links.self}">${user.name}</a><p class="bio">${user.users.bio}</p></div>`;
-// 	console.log(htmlString);
-// 	return htmlString;
-// }
+function toHTML(user) {
+	let status;
+	let htmlString = `<div class="streamer"><div class="image" style="background-image: url('${user.users.logo}');"></div><div class="name"><a href="${`https://twitch.tv/${user.name}`}">${user.users['display_name']}</a></div><div class="status"></div></div>`
+	console.log(htmlString);
+	return htmlString;
+}
 
-// getUserData(defaultUsers);
+getUserData(defaultUsers);
+getStreamData(defaultUsers);
+getChannelData(defaultUsers);
 
-// setTimeout(function() {
-// 	displayUserData(defaultUsers);
-// }, 1000);
+setTimeout(function() {
+	displayUserData(defaultUsers);
+}, 1000);
 
-// console.log(defaultUsers);
+console.log(defaultUsers);
