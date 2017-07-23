@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 let addIcon = document.getElementById('add-icon'),
 	add = document.getElementById('add');
@@ -10,37 +10,43 @@ addIcon.addEventListener('click', function() {
 	setTimeout(function(){add.focus()},50);
 });
 
+add.addEventListener('keyup', function(e) {
+	if (e.which === 13 && e.target.value) {
+		add.blur();
+	}
+});
+
 add.addEventListener('blur', function() {
 	// remove active class
 	add.className = "";
 });
 
-// let defaultUsers = [
-//   {
-//     "name": "ESL_SC2"
-//   },
-//   {
-//     "name": "OgamingSC2"
-//   },
-//   {
-//     "name": "cretetion"
-//   },
-//   {
-//     "name": "freecodecamp"
-//   },
-//   {
-//     "name": "storbeck"
-//   },
-//   {
-//     "name": "habathcx"
-//   },
-//   {
-//     "name": "RobotCaleb"
-//   },
-//   {
-//     "name": "noobs2ninjas"
-//   }
-// ];
+let defaultUsers = [
+  {
+    "name": "freecodecamp"
+  },
+  {
+    "name": "esl_csgo"
+  },
+  {
+    "name": "playoverwatch"
+  },
+  {
+    "name": "scream"
+  },
+  {
+    "name": "summit1g"
+  },
+  {
+    "name": "pashabiceps"
+  },
+  {
+    "name": "m0e_tv"
+  },
+  {
+    "name": "c9sneaky"
+  }
+];
 
 // function getData(users, type) {
 // 	users.forEach((user, i) => {
