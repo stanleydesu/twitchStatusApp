@@ -139,6 +139,10 @@ body {
 	border-color: var(--offline) !important;
 }
 
+#streamers > a {
+	text-decoration: none;
+}
+
 .streamer {
 	display: flex;
 	justify-content: space-around;
