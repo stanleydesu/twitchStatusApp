@@ -7,16 +7,22 @@
 	--offline: #e74c3c;
 }
 
+html {
+	height: 100%;
+}
+
 body {
 	background-color: var(--twitch);
 	margin: 0;
+	height: 100%;
 }
 
 .main-wrapper {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100%;
 }
 
 #status-box {
