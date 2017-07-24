@@ -46,16 +46,11 @@ function getData(users, type) {
 	});
 }
 
-function getUserData(users) {
+function getTwitchData(users) {
 	getData(users, 'users');
-}
-
-function getStreamData(users) {
 	getData(users, 'streams');
-}
-
-function getChannelData(users) {
 	getData(users, 'channels');
+	setTimeout(function(){displayUserData(defaultUsers);},3500);
 }
 
 function displayUserData(users) {
@@ -70,16 +65,9 @@ function toHTML(user) {
 	let streamStatus = (user.streams.stream !== null ? user.streams.stream.channel.status : 'Offline');
 	let status = streamStatus === 'Offline' ? 'offline' : 'online';
 	let htmlString = `<div class="streamer"><div class="image ${status}" style="background-image: url('${user.users.logo}');"></div><div class="name"><a class="${status}" href="${user.channels.url}">${user.users['display_name']}</a></div><div class="status ${status}">${streamStatus}</div></div>`
-	console.log(htmlString);
 	return htmlString;
 }
 
-getUserData(defaultUsers);
-getStreamData(defaultUsers);
-getChannelData(defaultUsers);
+getTwitchData(defaultUsers);
 
-setTimeout(function() {
-	displayUserData(defaultUsers);
-}, 3000);
 
-console.log(defaultUsers);
