@@ -162,7 +162,7 @@ body {
 }
 
 .streamer .name {
-	width: 6em;
+	width: 20%;
 	height: 2em;
 	position: relative;
 }
@@ -174,11 +174,15 @@ body {
 }
 
 .streamer .status {
-	width: 22em;
+	width: 65%;
 	color: inherit;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
+	*:not(#filters) {
+		font-size: 14px;
+	}
+
 	#status-box {
 		width: 90vw;
 	}
