@@ -64,7 +64,7 @@ function displayUserData(users) {
 function toHTML(user) {
 	let streamStatus = (user.streams.stream !== null ? user.streams.stream.channel.status : 'Offline');
 	let status = streamStatus === 'Offline' ? 'offline' : 'online';
-	let htmlString = `<div class="streamer"><div class="image ${status}" style="background-image: url('${user.users.logo}');"></div><div class="name"><a class="${status}" href="${user.channels.url}">${user.users['display_name']}</a></div><div class="status ${status}">${streamStatus}</div></div>`
+	let htmlString = `<a href="${user.channels.url}"><div class="streamer"><div class="image ${status}" style="background-image: url('${user.users.logo}');"></div><div class="name ${status}">${user.users['display_name']}</div><div class="status ${status}">${streamStatus}</div></div></a>`
 	return htmlString;
 }
 
