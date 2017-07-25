@@ -169,6 +169,14 @@ body {
 	border-width: 3px;
 	border-style: solid;
 	border-color: var(--grey);
+	transition: width 0.3s ease, height 0.3s ease;
+}
+
+.streamer .image:hover {
+	top: -1em;
+	left: -1em;
+	width: 5em;
+	height: 5em;
 }
 
 .streamer .name {
