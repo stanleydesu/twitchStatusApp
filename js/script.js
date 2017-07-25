@@ -71,7 +71,7 @@ function toHTML(user) {
 function removeUser(user) {
 	let index = defaultUsers.findIndex(element => element.name === user);
 	defaultUsers.splice(index, 1);
-	let userElement = document.getElementById('streamers').childNodes[index];
+	let userElement = document.getElementById('streamers').children[index];
 	userElement.parentNode.removeChild(userElement);
 }
 
@@ -81,4 +81,16 @@ function addUser(user) {
 	streamers.appendChild(toHTML(user));
 }
 
+function filterUsers(users, filter) {
+	let htmlUsers = document.getElementById('streamers').childNodes;
+	htmlUsers.forEach(function(curr, i, arr) {
+		if (curr[i].firstChild.firstChild.className.indexOf(filter) === -1) {
+			curr[i].classList.add('hidden');
+		} else {
+			curr[i].classList.remove('hidden');
+		}
+	});
+}
+
 getTwitchData(defaultUsers);
+console.log(defaultUsers);
