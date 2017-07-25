@@ -68,6 +68,11 @@ function toHTML(user) {
 	return htmlString;
 }
 
+function removeUser(user) {
+	let index = defaultUsers.findIndex(element => element.name === user);
+	defaultUsers.splice(index, 1);
+	let userElement = document.getElementById('streamers').childNodes[index];
+	userElement.parentNode.removeChild(userElement);
+}
+
 getTwitchData(defaultUsers);
-
-
