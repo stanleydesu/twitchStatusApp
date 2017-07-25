@@ -75,4 +75,10 @@ function removeUser(user) {
 	userElement.parentNode.removeChild(userElement);
 }
 
+function addUser(user) {
+	defaultUsers.push(user);
+	let streamers = document.getElementById('streamers');
+	streamers.appendChild(toHTML(user));
+}
+
 getTwitchData(defaultUsers);
