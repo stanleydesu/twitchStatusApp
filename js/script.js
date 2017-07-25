@@ -1,7 +1,8 @@
 "use strict";
 
-let addIcon = document.getElementById('add-icon'),
-	add = document.getElementById('add');
+const addIcon = document.getElementById('add-icon'),
+	  add = document.getElementById('add'),
+	  streamers = document.getElementById('streamers');
 
 addIcon.addEventListener('click', function() {
 	// fade in and widen search box
@@ -54,7 +55,6 @@ function getTwitchData(users) {
 }
 
 function displayUserData(users) {
-	let streamers = document.getElementById('streamers');
 	streamers.innerHTML = "";
 	users.forEach(user => {
 		streamers.innerHTML += toHTML(user);
@@ -71,18 +71,17 @@ function toHTML(user) {
 function removeUser(user) {
 	let index = defaultUsers.findIndex(element => element.name === user);
 	defaultUsers.splice(index, 1);
-	let userElement = document.getElementById('streamers').children[index];
+	let userElement = streamers.children[index];
 	userElement.parentNode.removeChild(userElement);
 }
 
 function addUser(user) {
 	defaultUsers.push(user);
-	let streamers = document.getElementById('streamers');
 	streamers.appendChild(toHTML(user));
 }
 
 function filterUsers(users, filter) {
-	let htmlUsers = document.getElementById('streamers').childNodes;
+	let htmlUsers = streamers.childNodes;
 	htmlUsers.forEach(function(curr, i, arr) {
 		if (curr[i].firstChild.firstChild.className.indexOf(filter) === -1) {
 			curr[i].classList.add('hidden');
