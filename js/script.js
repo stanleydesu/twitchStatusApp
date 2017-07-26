@@ -2,7 +2,8 @@
 
 const addIcon = document.getElementById('add-icon'),
 	  add = document.getElementById('add'),
-	  streamers = document.getElementById('streamers');
+	  streamers = document.getElementById('streamers'),
+	  filters = document.getElementById('filters');
 
 addIcon.addEventListener('click', function() {
 	// fade in and widen search box
@@ -15,6 +16,11 @@ add.addEventListener('keyup', function(e) {
 	if (e.which === 13 && e.target.value) {
 		add.blur();
 	}
+});
+
+filters.addEventListener('click', function(e) {
+	let filter = e.target.id;
+	filterUsers(defaultUsers, filter === 'all' ? 'image' : filter);
 });
 
 add.addEventListener('blur', function() {
@@ -83,13 +89,15 @@ function addUser(user) {
 function filterUsers(users, filter) {
 	let htmlUsers = streamers.childNodes;
 	htmlUsers.forEach(function(curr, i, arr) {
-		if (curr[i].firstChild.firstChild.className.indexOf(filter) === -1) {
-			curr[i].classList.add('hidden');
+		if (curr.firstChild.firstChild.className.indexOf(filter) === -1) {
+			curr.classList.add('hidden');
 		} else {
-			curr[i].classList.remove('hidden');
+			curr.classList.remove('hidden');
 		}
 	});
 }
+
+
 
 getTwitchData(defaultUsers);
 console.log(defaultUsers);
