@@ -17,6 +17,10 @@ body {
 	height: 100%;
 }
 
+.hidden {
+	display: none;
+}
+
 .main-wrapper {
 	display: flex;
 	justify-content: center;
@@ -173,8 +177,8 @@ body {
 }
 
 .streamer .image:hover {
-	top: -1em;
-	left: -1em;
+	top: -2em;
+	left: -2em;
 	width: 5em;
 	height: 5em;
 }
