@@ -1,8 +1,6 @@
 "use strict";
 
-const addIcon = document.getElementById('add-icon'),
-	  add = document.getElementById('add'),
-	  streamers = document.getElementById('streamers'),
+const streamers = document.getElementById('streamers'),
 	  filters = document.getElementById('filters');
 
 addIcon.addEventListener('click', function() {
