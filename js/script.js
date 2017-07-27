@@ -3,27 +3,9 @@
 const streamers = document.getElementById('streamers'),
 	  filters = document.getElementById('filters');
 
-addIcon.addEventListener('click', function() {
-	// fade in and widen search box
-	add.className = "active";
-	// allow search box to render before focusing
-	setTimeout(function(){add.focus()},50);
-});
-
-add.addEventListener('keyup', function(e) {
-	if (e.which === 13 && e.target.value) {
-		add.blur();
-	}
-});
-
 filters.addEventListener('click', function(e) {
 	let filter = e.target.id;
 	filterUsers(defaultUsers, filter === 'all' ? 'image' : filter);
-});
-
-add.addEventListener('blur', function() {
-	// remove active class
-	add.className = "";
 });
 
 let defaultUsers = [
