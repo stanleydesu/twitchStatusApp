@@ -79,11 +79,6 @@ function removeUser(user) {
 	userElement.parentNode.removeChild(userElement);
 }
 
-function addUser(user) {
-	defaultUsers.push(user);
-	streamers.appendChild(toHTML(user));
-}
-
 function filterUsers(users, filter) {
 	let htmlUsers = streamers.childNodes;
 	htmlUsers.forEach(function(curr, i, arr) {
